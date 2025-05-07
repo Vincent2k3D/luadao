@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Thông báo</title>
+        <link rel="stylesheet" href="style.css">
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     </head>
     <body>
-        <h1>Chúc mừng bạn đã bị lừa đảo</h1>
+        <div class="particles" id="particles"></div>
+        <div class="container">
+            <div class="icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h1>Chúc mừng bạn đã bị lừa</h1>
+            <p>Đây là một thông báo giả mạo. Hãy luôn cẩn thận với các liên kết
+                và trang web bạn truy cập trên internet để bảo vệ thông tin cá
+                nhân.</p>
+            <button class="btn" id="closeBtn">Đã hiểu</button>
+        </div>
+
+        <script>
+        // Tạo hiệu ứng hạt nền
+        const particlesContainer = document.getElementById('particles');
+        
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Kích thước ngẫu nhiên
+            const size = Math.random() * 15 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Vị trí ngẫu nhiên
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            
+            // Thời gian hoạt hình ngẫu nhiên
+            particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            
+            particlesContainer.appendChild(particle);
+        }
+        
+        // Xử lý nút đóng
+        document.getElementById('closeBtn').addEventListener('click', function() {
+            alert('Đây chỉ là một trang web mẫu để cảnh báo về lừa đảo trực tuyến.');
+        });
+    </script>
     </body>
 </html>
